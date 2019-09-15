@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AddContactComponent } from './contact/add-contact/add-contact.component';
-import { EditContactComponent } from './contact/edit-contact/edit-contact.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { HomeComponent } from './home/home.component';
+import { AddContactComponent } from 'pages/contact/add/add-contact.component';
+import { EditContactComponent } from 'pages/contact/edit/edit-contact.component';
+import { NotFoundComponent } from 'pages/not-found/not-found.component';
+import { HomeComponent } from 'pages/home/home.component';
 
 const routes: Routes = [
   {
