@@ -6,6 +6,8 @@ const logger = require('morgan');
 
 const app = express();
 
+const contactsRoute = require('./routes/contacts');
+
 /* view engine setup */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -17,6 +19,9 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+/* contacts endpoint */
+app.use('/contacts', contactsRoute);
 
 /* home page */
 app.get('/', (req, res) => {
