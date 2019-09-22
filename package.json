@@ -1,10 +1,10 @@
 {
-  "name": "wemanity-kata",
+  "name": "phonebook-app",
   "author": {
     "name": "El Ghzaoui Nasreddine",
-    "email": "nelghzaoui@helb-prigogine.be"
+    "email": "elghzaouinasreddine@hotmail.com"
   },
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

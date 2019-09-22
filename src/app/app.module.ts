@@ -13,6 +13,7 @@ import { NotFoundComponent } from 'pages/not-found/not-found.component';
 
 /* MATERIAL COMPONENT */
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -42,6 +43,7 @@ export class AppModule {
 
   private static MATERIALS = [
     MatButtonModule,
+    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

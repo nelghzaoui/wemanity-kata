@@ -1,20 +1,24 @@
-<div class="contact-form">
-  <form [formGroup]="form" (ngSubmit)="onSave()">
-    <mat-form-field>
-      <input matInput placeholder="Enter your last name" [formControl]="lastname">
-      <mat-error *ngIf="lastname.touched && lastname.invalid">{{getErrorMessage('lastname')}}</mat-error>
-    </mat-form-field>
+<mat-card class="contact-form">
+  <mat-card-content>
+    <div class="contact-form">
+      <form [formGroup]="form" (ngSubmit)="onAdd()">
+        <mat-form-field>
+          <input matInput placeholder="Enter your last name" [formControl]="lastname">
+          <mat-error *ngIf="lastname.touched && lastname.invalid">{{getErrorMessage('lastname')}}</mat-error>
+        </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Enter your first name" [formControl]="firstname">
-      <mat-error *ngIf="firstname.touched && firstname.invalid">{{getErrorMessage('firstname')}}</mat-error>
-    </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter your first name" [formControl]="firstname">
+          <mat-error *ngIf="firstname.touched && firstname.invalid">{{getErrorMessage('firstname')}}</mat-error>
+        </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Phone Number" [formControl]="phonenumber">
-      <mat-error *ngIf="phonenumber.touched && phonenumber.invalid">{{getErrorMessage('phonenumber')}}</mat-error>
-    </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter your phone number" [formControl]="phonenumber">
+          <mat-error *ngIf="phonenumber.touched && phonenumber.invalid">{{getErrorMessage('phonenumber')}}</mat-error>
+        </mat-form-field>
 
-    <button mat-raised-button color="primary" [disabled]="form.unvalid">Add contact</button>
-  </form>
-</div>
+        <button mat-raised-button color="primary" [disabled]="form.unvalid">Add contact</button>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

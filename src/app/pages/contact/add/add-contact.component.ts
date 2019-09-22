@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contact } from 'models/contact/contact.interface';
+import { ContactsService } from 'services/contacts/contacts.service';
 
 @Component({
   selector: 'app-add-contact',
@@ -10,7 +11,7 @@ import { Contact } from 'models/contact/contact.interface';
 export class AddContactComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private contactService: ContactsService, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -23,9 +24,8 @@ export class AddContactComponent implements OnInit {
     });
   }
 
-  onSave() {
+  onAdd() {
     if (this.form.valid) {
-      //TODO:CALL TO ADD USER IN DATABASE
     }
   }
 
