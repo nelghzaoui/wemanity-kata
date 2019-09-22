@@ -1,12 +1,11 @@
-const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
+const createError = require('http-errors');
 const logger = require('morgan');
+const path = require('path');
 
 const app = express();
 
-const contactsRoute = require('./routes/contacts');
 
 /* view engine setup */
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* contacts endpoint */
-app.use('/contacts', contactsRoute);
+const contactsRoute = require('./routes/contacts');
+app.use('/api/contacts', contactsRoute);
 
 /* home page */
 app.get('/', (req, res) => {
