@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contact } from 'models/contact/contact.interface';
-import { ContactsService } from 'services/contacts/contacts.service';
+import { ContactService } from 'services/contact/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-contact',
+  selector: 'add-contact',
   templateUrl: './add-contact.component.html',
   styleUrls: ['./add-contact.component.scss']
 })
 export class AddContactComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private contactService: ContactsService, private formBuilder: FormBuilder) {}
+  constructor(
+    private contactService: ContactService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -26,6 +31,9 @@ export class AddContactComponent implements OnInit {
 
   onAdd() {
     if (this.form.valid) {
+      this.contactService.add(this.form.value as Contact).subscribe(() => {
+        this.router.navigate(['/']);
+      });
     }
   }
 

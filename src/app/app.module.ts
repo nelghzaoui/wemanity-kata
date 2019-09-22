@@ -1,6 +1,7 @@
 import { AppRoutingModule } from './routes/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -20,6 +21,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 
+/* SERVICE */
+import { ContactService } from 'services/contact/contact.service';
+
 @NgModule({
   declarations: [AppModule.PAGES],
   imports: [
@@ -27,20 +31,13 @@ import { MatTableModule } from '@angular/material/table';
     BrowserModule,
     AppModule.MATERIALS,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AppModule.PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  private static PAGES = [
-    AddContactComponent,
-    AppComponent,
-    EditContactComponent,
-    HomeComponent,
-    NotFoundComponent
-  ];
-
   private static MATERIALS = [
     MatButtonModule,
     MatCardModule,
@@ -50,4 +47,14 @@ export class AppModule {
     MatProgressSpinnerModule,
     MatTableModule
   ];
+
+  private static PAGES = [
+    AddContactComponent,
+    AppComponent,
+    EditContactComponent,
+    HomeComponent,
+    NotFoundComponent
+  ];
+
+  private static PROVIDERS = [ContactService];
 }

@@ -3,7 +3,10 @@ const router = express.Router();
 
 /* ADD contact */
 router.post('/add', (req, res, next) => {
-  res.send('add');
+  console.log("req", req);
+  console.log("res", res);
+
+  res.send('added');
   next();
 })
 
